@@ -1,0 +1,247 @@
+.posts{
+    border-bottom: 1px dashed rgb(59, 59, 59);
+    padding: 10px 0px;
+}
+
+.user-post{
+    font-size: 12px;
+    color: rgb(107, 107, 107);
+    text-align: left;
+}
+
+.name-post{
+    text-align: left;
+    font-size: 16px;
+    margin: 2px 0px 8px;
+}
+
+.post-content{
+    background-color: rgb(65, 65, 65);
+    padding: 10px;
+    text-align: justify;
+    border-radius: 5px;
+}
+
+.newPost{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.editPost{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    margin-left: -60px;
+}
+
+.open{
+    display: flex;
+}
+
+
+.contentNewPost{
+    width: 60%;
+    color: white;
+    background-color: white;
+    background-color: rgb(53, 49, 49);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.optButtonsNewPost{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    padding: 50px 70px;
+}
+
+.headerPost{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 60px;
+}
+
+.headerPost input{
+    width: 400px;
+}
+
+.org-name-data{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.config-list-date{
+    display: flex;
+    justify-content: end;
+}
+
+.optionsPost{
+    display: flex;
+    font-size: 20px;
+    gap: 3px;
+}
+
+.data-post{
+    font-size: 11px;
+    color: rgb(150, 150, 150);
+}
+
+.optionsPost svg{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.optionsPost p{
+    margin-top: 2px;
+}
+
+.deleteAndEdit{
+    text-align: right;
+    width: 100%;
+}
+
+.edited{
+    color: rgb(114, 114, 114);
+    font-size: 12px;
+    font-style: italic;
+}
+
+.coments{
+    background-color: rgb(53, 49, 49);
+    width: 420px;
+    height: 500px;
+    border-radius: 10px;
+    margin-right: 50px;
+    display: none;
+    flex-direction: column;
+    overflow-y: scroll;
+    position: fixed;
+    right: 0;
+    top: 120px;
+    box-shadow: 4px 4px 8px 3px rgba(51, 51, 51, 0.589);
+}
+
+.close-coments{
+    cursor: pointer;
+    color: white;
+    margin: 5px;
+    width: 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+
+.config-list-date svg{
+    margin-right:8px;
+    font-size: 15px;
+}
+
+.close-coments:hover{
+    background-color: white;
+    color: rgb(26, 17, 17);
+}
+
+.nav-coment{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-coments{
+    height: 78%;
+    background-color: rgb(59, 59, 59);
+    margin: 0 10px;
+    border-radius: 5px;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+
+
+.show-coments p{
+    padding: 2px 10px 0px;
+    color: rgb(160, 160, 160);
+    font-size: 10px;
+}
+
+.submit-coment{
+    display: flex;
+    padding: 10px;
+}
+
+.submit-coment textarea{
+    height: 50px;
+    width: 85%;
+    border-radius: 20px 0px 0px 20px;
+    border-right: 2px solid rgb(53, 49, 49);
+    box-shadow: none;
+
+}
+
+.submit-coment-button{
+    width: 15%;
+    border-radius: 0px 20px 20px 0px;
+    background-color: rgb(53, 49, 49);
+    border: solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.submit-coment-button:hover{
+    background-color: white;
+    color: rgb(53, 49, 49);
+}
+
+.dados-post{
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.user-data{
+    color: rgb(114, 114, 114);
+    font-size: 12px;
+}
+
+.coment{
+    font-size: 12px;
+    background-color: rgb(83, 83, 83);
+    text-align: left;
+    padding: 10px 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.org-name-coment{
+    display: flex;
+    justify-content: space-between;
+}
