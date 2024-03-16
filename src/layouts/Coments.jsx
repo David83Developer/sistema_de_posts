@@ -172,7 +172,7 @@ function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
                             <p>{coment.data_post}</p>
                             {coment.user_post === user_post &&
                             <>
-                                <FaTrash onClick={()=> {setComentCont((prevComent)=> prevComent -1), deleteComent(coment.id)}}/>
+                                <FaTrash onClick={()=> {setComentCont((prevComent)=> prevComent === 0? 0: -1), deleteComent(coment.id)}}/>
                             </> }
                             </div>
                             
