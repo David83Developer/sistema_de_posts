@@ -30,8 +30,6 @@ function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
                 setAllComents(data)
             })
             .catch((err)=> console.log(err))
-
-            console.log(allComents)
         
     }, [allComents]);
 
@@ -47,7 +45,6 @@ function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
         .then((data)=> {
             const newId = data.filter((dataInfo)=>(dataInfo.id === idPostNow))
             setContNumCom(newId[0]?.numberComents)
-            console.log("likes: "+likesPrev  +" dislikes: "+dislikesPrev)
         })
         .catch((err)=> console.log(err))
         

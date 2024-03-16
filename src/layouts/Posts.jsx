@@ -135,7 +135,6 @@ function Posts() {
     const setLikeInTable = (idpostliked) => {
 
         let newLiked = {
-            liked: 1,
             cod_user: idUser,
             cod_post: idpostliked
         }
