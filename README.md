@@ -7,11 +7,11 @@ ROLES:
 - Administrador(Tela de configurações do site) | Configurar o site;
 
 NOTAS:
-O site está na sua primeira versão, então existem algumas coisas não configuradas ainda: Administrador, página de informações, sistema de segurança, código otimizado visionando a eficiência, entre outras configurações essenciais para um site;]
+O site está na sua primeira versão, então existem algumas coisas não configuradas ainda: Administrador, página de informações, sistema de segurança, código otimizado visionando a eficiência, entre outras configurações essenciais para um site;
 
 // ---------------------------------------------- // 
 
-VERSÂO 1.0 | DATA: 16/03/2024:
+VERSÃO 1.0 | DATA: 16/03/2024:
 - Sistema de Login e Register completos;
 - Sistema de posts(criar, atualizar e deletar) completo;
 - Sistema de likes, dislikes e comments completo;
