@@ -16,7 +16,7 @@ O site está na sua primeira versão, então existem algumas coisas não configu
 
 // ---------------------------------------------- // 
 
-VERSÂO 1.0.1 | DATA: 18/03/2024:
+VERSÃO 1.0.1 | DATA: 18/03/2024:
 - Correção de alguns bugs;
 
 // ---------------------------------------------- // 
