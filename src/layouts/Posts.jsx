@@ -27,9 +27,6 @@ function Posts() {
 
     const [userComent, setUserComent] = useState('');
     const [nameComent, setNameComent] = useState('');
-    const [numberComents, setNumberComents] = useState(0);
-    const [likeAtual, setLikeAtual] = useState(0);
-    const [dislikeAtual, setDislikeAtual] = useState(0);
 
     const [arrayLiked, setArrayLiked] = useState([]);
     const [changeContChange, setChangeContChange] = useState();
@@ -359,10 +356,7 @@ function Posts() {
                     <p>{post.numberComents}</p><VscComment onClick={()=> {showComents(),
                         setIdComents(post.id), 
                         setUserComent(post.user_post), 
-                        setNameComent(post.name_post),
-                        setNumberComents(post.numberComents),
-                        setLikeAtual(post.likes),
-                        setDislikeAtual(post.dislikes)
+                        setNameComent(post.name_post)
                         }} />
                     <div className="deleteAndEdit">
                     {post.user_post === user_post && <FaEdit onClick={()=> { openEditPost(), 
@@ -372,8 +366,7 @@ function Posts() {
                         }}/>}
                     {post.user_post === user_post && <FaTrash onClick={() => {deletePost(post.id)}}/>}
                     <Coments 
-                    likesPrev={likeAtual}
-                    dislikesPrev={dislikeAtual}
+                    ChangeCont={changeContChange}
                     userPost={userComent} 
                     namePost={nameComent}
                     idPostNow = {idComents}

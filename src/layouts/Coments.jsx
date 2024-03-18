@@ -1,20 +1,23 @@
 import Textarea from '../components/Textarea';
 import './LayoutsStyle.css'
 
-import {FaArrowRight, FaEdit, FaTrash} from 'react-icons/fa'
+import {FaArrowRight, FaTrash} from 'react-icons/fa'
 
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../contexts/AuthUser';
 
 
 
-function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
+function Coments({userPost, namePost, idPostNow, ChangeCont}) {
 
     const [allComents, setAllComents] = useState([]);
     const [textComent, setTextComent] = useState('');
     const [comentsFiltered, setComentsFiltered] = useState([]);
     const [comentCont, setComentCont] = useState(1);
-    const [contNumCom, setContNumCom] = useState([]); 
+    const [contNumCom, setContNumCom] = useState(0); 
+
+    const [currentLikes, setCurrentLikes] = useState(0);
+    const [currentDislikes, setCurrentDisikes] = useState(0);
 
     const {user_post} = useContext(AuthContext)
 
@@ -43,14 +46,15 @@ function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
         })
         .then((res)=> res.json())
         .then((data)=> {
-            const newId = data.filter((dataInfo)=>(dataInfo.id === idPostNow))
-            setContNumCom(newId[0]?.numberComents)
+            const newId = data.find((dataInfo)=>(dataInfo.id === idPostNow))
+            setContNumCom(newId?.numberComents)
+            setCurrentLikes(newId?.likes)
+            setCurrentDisikes(newId?.dislikes)
+            console.log(newId)
         })
         .catch((err)=> console.log(err))
-        
 
-       
-    }, [idPostNow, comentCont]);
+    }, [idPostNow, comentCont, ChangeCont]);
 
      
 
@@ -89,12 +93,13 @@ function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
         .then((res)=> res.json())
         .catch((err)=> console.log(err))
 
+      
 
         setAllComents([...allComents, newComent])
 
         let newNumberComent = {
-            likes: likesPrev,
-            dislikes: dislikesPrev,
+            likes: currentLikes,
+            dislikes: currentDislikes,
             numberComents: contNumCom+1
         }
 
@@ -125,13 +130,14 @@ function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
             .then((res) => res.json())
             .catch((err)=> console.log(err))
 
+            setAllComents(allComents)
+
             let newNumberComent = {
-                likes: likesPrev,
-                dislikes: dislikesPrev,
+                likes: currentLikes,
+                dislikes: currentDislikes,
                 numberComents: contNumCom-1
             }
-    
-    
+
             fetch(`http://localhost:8800/post/${idPostNow}`,{
                 method: "PUT",
                 headers: {
@@ -172,7 +178,7 @@ function Coments({userPost, namePost, idPostNow, likesPrev, dislikesPrev}) {
                             <p>{coment.data_post}</p>
                             {coment.user_post === user_post &&
                             <>
-                                <FaTrash onClick={()=> {setComentCont((prevComent)=> prevComent === 0? 0: -1), deleteComent(coment.id)}}/>
+                                <FaTrash onClick={()=> {setComentCont((prevComent)=> prevComent -1), deleteComent(coment.id)}}/>
                             </> }
                             </div>
                             
